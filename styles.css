@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(15,15,15);
+}
+
+/* CONTAINER */
+
+.container {
+    min-height: 100vh;
+    padding-block: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+}
+
+/* BOX */
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(20,20,20);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid white;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* POP-UP */
+
+.pop-up {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.pop-up-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
