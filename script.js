@@ -1,25 +1,22 @@
 const box = document.querySelectorAll('.box');
+let gamePoints = 0;
 
 // START THE GAME
 
 window.addEventListener('DOMContentLoaded', startTheGame);
 
 function startTheGame() {
-    box[Math.floor(Math.random() * 4)].innerHTML = `
-        <div class="pop-up">
-            <img src="./assets/character.png" alt="character" class="pop-up-image">
-        </div>`
-    ;
-    const popUp = document.querySelector('.pop-up');
+    const popUp = document.createElement('div');
+    popUp.classList.add('pop-up')
+    popUp.innerHTML = `
+        <img src="./assets/character.png" alt="character" class="pop-up-image">
+    `;
+    setInterval(() => {
+        box[Math.floor(Math.random() * 4)].appendChild(popUp);
+    }, 300);
+
     popUp.addEventListener('click', () => {
-        for (const boxes of box) {
-            boxes.innerHTML = '';
-        };
-        console.log('Caught');
-        box[Math.floor(Math.random() * 4)].innerHTML = `
-        <div class="pop-up">
-            <img src="./assets/character.png" alt="character" class="pop-up-image">
-        </div>`
-        ;
+        gamePoints += 100;
+        console.log('Game Points: ' + gamePoints);
     });
 };
